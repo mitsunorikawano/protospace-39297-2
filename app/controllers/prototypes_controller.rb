@@ -58,8 +58,8 @@ class PrototypesController < ApplicationController
 
 def create
   @prototype = Prototype.new(prototype_params)
-  if @comment.save
-    redirect_to prototype_path(@comment.prototype)
+  if @prototype.save
+    redirect_to prototype_path(@prototype)
   else
     @prototype = @comment.prototype
     # @comment = Comment.new(comment_params)
