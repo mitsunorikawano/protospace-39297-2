@@ -59,12 +59,13 @@ class PrototypesController < ApplicationController
 def create
   @prototype = Prototype.new(prototype_params)
   if @prototype.save
-    redirect_to prototype_path(@prototype)
+    redirect_to root_path
   else
-    @prototype = @comment.prototype
+    # @prototype = @comment.prototype
     # @comment = Comment.new(comment_params)
-    @comments = @prototype.comments
-    render "prototypes/show"
+    # @comments = @prototype.comments
+    # render "prototypes/show"
+    render :new
 #   if @prototype.save
 #     redirect_to root_path
 #   else
